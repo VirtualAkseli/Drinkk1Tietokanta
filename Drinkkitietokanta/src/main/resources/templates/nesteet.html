@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Nesteet</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <h1>Nesteet</h1>
+
+        <ul>
+            <li th:each="neste : ${nesteet}">
+                <span th:text="${neste.nimi}">Task</span>
+            </li>
+        </ul>
+
+        <h2> Lisää uusi neste</h2>
+
+        <form method="POST" action="/nesteet">
+            <input type="text" name="nimi"/><br/>
+            <input type="text" name="maara"/><br/>
+            <input type="text" name="hinta"/><br/>
+            <input type="text" name="alkoholipitoisuus"/><br/>
+            
+            <input type="submit" value="Add!"/>
+        </form>
+    </body>
+</html>
